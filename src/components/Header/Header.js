@@ -59,11 +59,13 @@ const MainHeader = styled.div`
   padding: 18px 32px;
   height: 72px;
   border-bottom: 1px solid ${COLORS.gray[300]};
+  overflow-x: auto;
+  overflow-y: hidden;
 `;
 
 const Nav = styled.nav`
   display: flex;
-  gap: 48px;
+  gap: clamp(15px, -90px + 10vw, 40px);
   margin: 0px 48px;
 
   @media ${QUERIES.tabletAndDown} {
