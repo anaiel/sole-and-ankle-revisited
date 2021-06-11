@@ -1,10 +1,11 @@
-import React from 'react';
-import styled from 'styled-components/macro';
+import React from "react";
+import styled from "styled-components/macro";
 
-import { COLORS, WEIGHTS } from '../../constants';
-import Logo from '../Logo';
-import SuperHeader from '../SuperHeader';
-import MobileMenu from '../MobileMenu';
+import { COLORS, QUERIES, WEIGHTS } from "../../constants";
+import Logo from "../Logo";
+import Icon from "../Icon";
+import SuperHeader from "../SuperHeader";
+import MobileMenu from "../MobileMenu";
 
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = React.useState(false);
@@ -30,6 +31,11 @@ const Header = () => {
           <NavLink href="/collections">Collections</NavLink>
         </Nav>
         <Side />
+        <MobileNav>
+          <Icon id="shopping-bag" />
+          <Icon id="search" />
+          <Icon id="menu" />
+        </MobileNav>
       </MainHeader>
 
       <MobileMenu
@@ -52,6 +58,21 @@ const Nav = styled.nav`
   display: flex;
   gap: 48px;
   margin: 0px 48px;
+
+  @media ${QUERIES.tabletAndDown} {
+    display: none;
+  }
+`;
+
+const MobileNav = styled.nav`
+  display: none;
+
+  @media ${QUERIES.tabletAndDown} {
+    flex: 1 0 auto;
+    display: flex;
+    max-width: 140px;
+    justify-content: space-between;
+  }
 `;
 
 const Side = styled.div`
