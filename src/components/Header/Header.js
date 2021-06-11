@@ -4,6 +4,7 @@ import styled from "styled-components/macro";
 import { COLORS, QUERIES, WEIGHTS } from "../../constants";
 import Logo from "../Logo";
 import Icon from "../Icon";
+import UnstyledButton from "../UnstyledButton";
 import SuperHeader from "../SuperHeader";
 import MobileMenu from "../MobileMenu";
 
@@ -34,7 +35,13 @@ const Header = () => {
         <MobileNav>
           <Icon id="shopping-bag" />
           <Icon id="search" />
-          <Icon id="menu" />
+          <UnstyledButton
+            onClick={() => {
+              setShowMobileMenu(true);
+            }}
+          >
+            <Icon id="menu" />
+          </UnstyledButton>
         </MobileNav>
       </MainHeader>
 
