@@ -7,6 +7,7 @@ import Icon from "../Icon";
 import UnstyledButton from "../UnstyledButton";
 import SuperHeader from "../SuperHeader";
 import MobileMenu from "../MobileMenu";
+import VisuallyHidden from "../VisuallyHidden";
 
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = React.useState(false);
@@ -33,13 +34,20 @@ const Header = () => {
         </Nav>
         <Side />
         <MobileNav>
-          <Icon id="shopping-bag" />
-          <Icon id="search" />
+          <span>
+            <VisuallyHidden>Shopping Cart</VisuallyHidden>
+            <Icon id="shopping-bag" />
+          </span>
+          <span>
+            <VisuallyHidden>Search</VisuallyHidden>
+            <Icon id="search" />
+          </span>
           <UnstyledButton
             onClick={() => {
               setShowMobileMenu(true);
             }}
           >
+            <VisuallyHidden>Menu</VisuallyHidden>
             <Icon id="menu" />
           </UnstyledButton>
         </MobileNav>
